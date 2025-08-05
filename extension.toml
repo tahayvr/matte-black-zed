@@ -1,0 +1,7 @@
+id = "matte-black-theme"
+name = "Matte Black"
+version = "0.0.1"
+schema_version = 1
+authors = ["Taha <taha@noiserandom.com>"]
+description = "A dark theme with a tang."
+repository = ""
