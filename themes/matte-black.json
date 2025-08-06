@@ -1,779 +1,711 @@
 {
-  "$schema": "http://json-schema.org/draft-07/schema#",
-  "title": "ThemeFamilyContent",
-  "description": "The content of a serialized theme family.",
-  "type": "object",
-  "required": ["author", "name", "themes"],
-  "properties": {
-    "author": {
-      "type": "string"
-    },
-    "name": {
-      "type": "string"
-    },
-    "themes": {
-      "type": "array",
-      "items": {
-        "$ref": "#/definitions/ThemeContent"
-      }
-    }
-  },
-  "definitions": {
-    "AccentContent": {
-      "type": ["string", "null"]
-    },
-    "AppearanceContent": {
-      "type": "string",
-      "enum": ["light", "dark"]
-    },
-    "FontStyleContent": {
-      "type": "string",
-      "enum": ["normal", "italic", "oblique"]
-    },
-    "HighlightStyleContent": {
-      "type": "object",
-      "properties": {
-        "background_color": {
-          "default": null,
-          "type": ["string", "null"]
-        },
-        "color": {
-          "default": null,
-          "type": ["string", "null"]
-        },
-        "font_style": {
-          "default": null,
-          "anyOf": [
-            {
-              "$ref": "#/definitions/FontStyleContent"
-            },
-            {
-              "type": "null"
-            }
-          ]
-        },
-        "font_weight": {
-          "default": null,
-          "anyOf": [
-            {
-              "enum": [100, 200, 300, 400, 500, 600, 700, 800, 900]
-            },
-            {
-              "type": "null"
-            }
-          ]
-        }
-      }
-    },
-    "PlayerColorContent": {
-      "type": "object",
-      "properties": {
-        "background": {
-          "type": ["string", "null"]
-        },
-        "cursor": {
-          "type": ["string", "null"]
-        },
-        "selection": {
-          "type": ["string", "null"]
-        }
-      }
-    },
-    "ThemeContent": {
-      "description": "The content of a serialized theme.",
-      "type": "object",
-      "required": ["appearance", "name", "style"],
-      "properties": {
-        "appearance": {
-          "$ref": "#/definitions/AppearanceContent"
-        },
-        "name": {
-          "type": "string"
-        },
-        "style": {
-          "$ref": "#/definitions/ThemeStyleContent"
-        }
-      }
-    },
-    "ThemeStyleContent": {
-      "description": "The content of a serialized theme.",
-      "type": "object",
-      "properties": {
-        "accents": {
-          "default": [],
-          "type": "array",
-          "items": {
-            "$ref": "#/definitions/AccentContent"
+  "$schema": "https://zed.dev/schema/themes/v0.2.0.json",
+  "name": "Matte Black",
+  "author": "Taha YVR <taha@noiserandom.com>",
+  "themes": [
+    {
+      "name": "Matte Black",
+      "appearance": "dark",
+      "style": {
+        "accents": [
+          "#cbb0f766",
+          "#b9c3fc66",
+          "#86caee66",
+          "#aee1b266",
+          "#f0e0bd66",
+          "#f1ba9d66",
+          "#eb9ab766"
+        ],
+        "background.appearance": "opaque",
+        "border": "#333333",
+        "border.variant": "#333333",
+        "border.focused": "#8a8a8d",
+        "border.selected": "#8a8a8d",
+        "border.transparent": "#a6e3a1",
+        "border.disabled": "#6c7086",
+        "elevated_surface.background": "#121212",
+        "surface.background": "#121212",
+        "background": "#121212",
+        "element.background": "#11111b",
+        "element.hover": "#313244",
+        "element.active": "#585b704d",
+        "element.selected": "#3132444d",
+        "element.disabled": "#6c7086",
+        "drop_target.background": "#31324466",
+        "ghost_element.background": "#00000000",
+        "ghost_element.hover": "#45475a4d",
+        "ghost_element.active": "#585b7099",
+        "ghost_element.selected": "#6f728d66",
+        "ghost_element.disabled": "#6c7086",
+        "text": "#EAEAEA",
+        "text.muted": "#bac2de",
+        "text.placeholder": "#585b70",
+        "text.disabled": "#45475a",
+        "text.accent": "#F59E0B",
+        "icon": "#cdd6f4",
+        "icon.muted": "#7f849c",
+        "icon.disabled": "#6c7086",
+        "icon.placeholder": "#585b70",
+        "icon.accent": "#cba6f7",
+        "status_bar.background": "#121212",
+        "title_bar.background": "#121212",
+        "title_bar.inactive_background": "#11111bd9",
+        "toolbar.background": "#121212",
+        "tab_bar.background": "#121212",
+        "tab.inactive_background": "#212121",
+        "tab.active_background": "#121212",
+        "search.match_background": "#94e2d533",
+        "panel.background": "#121212",
+        "panel.focused_border": "#cdd6f4",
+        "panel.indent_guide": "#333333",
+        "panel.indent_guide_active": "#585b70",
+        "panel.indent_guide_hover": "#cba6f7",
+        "panel.overlay_background": "#212121",
+        "pane.focused_border": "#cdd6f4",
+        "pane_group.border": "#313244",
+        "scrollbar.thumb.background": "#333333",
+        "scrollbar.thumb.hover_background": "#8a8a8d",
+        "scrollbar.thumb.border": "#8a8a8d",
+        "scrollbar.track.background": null,
+        "scrollbar.track.border": "#333333",
+        "editor.foreground": "#eaeaea",
+        "editor.background": "#121212",
+        "editor.gutter.background": "#121212",
+        "editor.subheader.background": "#121212",
+        "editor.active_line.background": "#212121",
+        "editor.highlighted_line.background": null,
+        "editor.line_number": "#333333",
+        "editor.active_line_number": "#F59E0B",
+        "editor.invisible": "#9399b233",
+        "editor.wrap_guide": "#585b70",
+        "editor.active_wrap_guide": "#585b70",
+        "editor.document_highlight.bracket_background": "#cba6f717",
+        "editor.document_highlight.read_background": "#a6adc829",
+        "editor.document_highlight.write_background": "#a6adc829",
+        "editor.indent_guide": "#212121",
+        "editor.indent_guide_active": "#333333",
+        "terminal.background": "#121212",
+        "terminal.ansi.background": "#121212",
+        "terminal.foreground": "#eaeaea",
+        "terminal.dim_foreground": "#7f849c",
+        "terminal.bright_foreground": "#cdd6f4",
+        "terminal.ansi.black": "#45475a",
+        "terminal.ansi.red": "#f38ba8",
+        "terminal.ansi.green": "#a6e3a1",
+        "terminal.ansi.yellow": "#f9e2af",
+        "terminal.ansi.blue": "#89b4fa",
+        "terminal.ansi.magenta": "#f5c2e7",
+        "terminal.ansi.cyan": "#94e2d5",
+        "terminal.ansi.white": "#bac2de",
+        "terminal.ansi.bright_black": "#585b70",
+        "terminal.ansi.bright_red": "#f38ba8",
+        "terminal.ansi.bright_green": "#a6e3a1",
+        "terminal.ansi.bright_yellow": "#f9e2af",
+        "terminal.ansi.bright_blue": "#89b4fa",
+        "terminal.ansi.bright_magenta": "#f5c2e7",
+        "terminal.ansi.bright_cyan": "#94e2d5",
+        "terminal.ansi.bright_white": "#a6adc8",
+        "terminal.ansi.dim_black": "#45475a",
+        "terminal.ansi.dim_red": "#f38ba8",
+        "terminal.ansi.dim_green": "#a6e3a1",
+        "terminal.ansi.dim_yellow": "#f9e2af",
+        "terminal.ansi.dim_blue": "#89b4fa",
+        "terminal.ansi.dim_magenta": "#f5c2e7",
+        "terminal.ansi.dim_cyan": "#94e2d5",
+        "terminal.ansi.dim_white": "#bac2de",
+        "link_text.hover": "#89dceb",
+        "conflict": "#fab387",
+        "conflict.border": "#fab387",
+        "conflict.background": "#fab38726",
+        "created": "#a6e3a1",
+        "created.border": "#a6e3a1",
+        "created.background": "#a6e3a126",
+        "deleted": "#f38ba8",
+        "deleted.border": "#f38ba8",
+        "deleted.background": "#f38ba826",
+        "hidden": "#6c7086",
+        "hidden.border": "#6c7086",
+        "hidden.background": "#181825",
+        "hint": "#7c7f98",
+        "hint.border": "#585b70",
+        "hint.background": "#181825",
+        "ignored": "#6c7086",
+        "ignored.border": "#6c7086",
+        "ignored.background": "#6c708626",
+        "modified": "#f9e2af",
+        "modified.border": "#f9e2af",
+        "modified.background": "#f9e2af26",
+        "predictive": "#6c7086",
+        "predictive.border": "#b4befe",
+        "predictive.background": "#181825",
+        "renamed": "#74c7ec",
+        "renamed.border": "#74c7ec",
+        "renamed.background": "#74c7ec26",
+        "info": "#94e2d5",
+        "info.border": "#94e2d5",
+        "info.background": "#9399b233",
+        "warning": "#f9e2af",
+        "warning.border": "#f9e2af",
+        "warning.background": "#f9e2af1f",
+        "error": "#f38ba8",
+        "error.border": "#f38ba8",
+        "error.background": "#f38ba81f",
+        "success": "#a6e3a1",
+        "success.border": "#a6e3a1",
+        "success.background": "#a6e3a11f",
+        "unreachable": "#f38ba8",
+        "unreachable.border": "#f38ba8",
+        "unreachable.background": "#f38ba81f",
+        "players": [
+          {
+            "cursor": "#f5e0dc",
+            "selection": "#585b7080",
+            "background": "#f5e0dc"
+          },
+          {
+            "cursor": "#cbb0f7",
+            "selection": "#cbb0f733",
+            "background": "#cbb0f7"
+          },
+          {
+            "cursor": "#b9c3fc",
+            "selection": "#b9c3fc33",
+            "background": "#b9c3fc"
+          },
+          {
+            "cursor": "#86caee",
+            "selection": "#86caee33",
+            "background": "#86caee"
+          },
+          {
+            "cursor": "#aee1b2",
+            "selection": "#aee1b233",
+            "background": "#aee1b2"
+          },
+          {
+            "cursor": "#f0e0bd",
+            "selection": "#f0e0bd33",
+            "background": "#f0e0bd"
+          },
+          {
+            "cursor": "#f1ba9d",
+            "selection": "#f1ba9d33",
+            "background": "#f1ba9d"
+          },
+          {
+            "cursor": "#eb9ab7",
+            "selection": "#eb9ab733",
+            "background": "#eb9ab7"
           }
-        },
-        "background": {
-          "description": "Background Color. Used for the app background and blank panels or windows.",
-          "default": null,
-          "type": ["string", "null"]
-        },
-        "background.appearance": {
-          "default": null,
-          "anyOf": [
-            {
-              "$ref": "#/definitions/WindowBackgroundContent"
-            },
-            {
-              "type": "null"
-            }
-          ]
-        },
-        "border": {
-          "description": "Border color. Used for most borders, is usually a high contrast color.",
-          "default": null,
-          "type": ["string", "null"]
-        },
-        "border.disabled": {
-          "description": "Border color. Used for disabled elements, like a disabled input or button.",
-          "default": null,
-          "type": ["string", "null"]
-        },
-        "border.focused": {
-          "description": "Border color. Used for focused elements, like keyboard focused list item.",
-          "default": null,
-          "type": ["string", "null"]
-        },
-        "border.selected": {
-          "description": "Border color. Used for selected elements, like an active search filter or selected checkbox.",
-          "default": null,
-          "type": ["string", "null"]
-        },
-        "border.transparent": {
-          "description": "Border color. Used for transparent borders. Used for placeholder borders when an element gains a border on state change.",
-          "default": null,
-          "type": ["string", "null"]
-        },
-        "border.variant": {
-          "description": "Border color. Used for deemphasized borders, like a visual divider between two sections",
-          "default": null,
-          "type": ["string", "null"]
-        },
-        "conflict": {
-          "description": "Indicates some kind of conflict, like a file changed on disk while it was open, or merge conflicts in a Git repository.",
-          "default": null,
-          "type": ["string", "null"]
-        },
-        "conflict.background": {
-          "default": null,
-          "type": ["string", "null"]
-        },
-        "conflict.border": {
-          "default": null,
-          "type": ["string", "null"]
-        },
-        "created": {
-          "description": "Indicates something new, like a new file added to a Git repository.",
-          "default": null,
-          "type": ["string", "null"]
-        },
-        "created.background": {
-          "default": null,
-          "type": ["string", "null"]
-        },
-        "created.border": {
-          "default": null,
-          "type": ["string", "null"]
-        },
-        "deleted": {
-          "description": "Indicates that something no longer exists, like a deleted file.",
-          "default": null,
-          "type": ["string", "null"]
-        },
-        "deleted.background": {
-          "default": null,
-          "type": ["string", "null"]
-        },
-        "deleted.border": {
-          "default": null,
-          "type": ["string", "null"]
-        },
-        "drop_target.background": {
-          "description": "Background Color. Used for the area that shows where a dragged element will be dropped.",
-          "default": null,
-          "type": ["string", "null"]
-        },
-        "editor.active_line.background": {
-          "default": null,
-          "type": ["string", "null"]
-        },
-        "editor.active_line_number": {
-          "description": "Text Color. Used for the text of the line number in the editor gutter when the line is highlighted.",
-          "default": null,
-          "type": ["string", "null"]
-        },
-        "editor.active_wrap_guide": {
-          "default": null,
-          "type": ["string", "null"]
-        },
-        "editor.background": {
-          "default": null,
-          "type": ["string", "null"]
-        },
-        "editor.document_highlight.bracket_background": {
-          "description": "Highlighted brackets background color.\n\nMatching brackets in the cursor scope are highlighted with this background color.",
-          "default": null,
-          "type": ["string", "null"]
-        },
-        "editor.document_highlight.read_background": {
-          "description": "Read-access of a symbol, like reading a variable.\n\nA document highlight is a range inside a text document which deserves special attention. Usually a document highlight is visualized by changing the background color of its range.",
-          "default": null,
-          "type": ["string", "null"]
-        },
-        "editor.document_highlight.write_background": {
-          "description": "Read-access of a symbol, like reading a variable.\n\nA document highlight is a range inside a text document which deserves special attention. Usually a document highlight is visualized by changing the background color of its range.",
-          "default": null,
-          "type": ["string", "null"]
-        },
-        "editor.foreground": {
-          "default": null,
-          "type": ["string", "null"]
-        },
-        "editor.gutter.background": {
-          "default": null,
-          "type": ["string", "null"]
-        },
-        "editor.highlighted_line.background": {
-          "default": null,
-          "type": ["string", "null"]
-        },
-        "editor.indent_guide": {
-          "default": null,
-          "type": ["string", "null"]
-        },
-        "editor.indent_guide_active": {
-          "default": null,
-          "type": ["string", "null"]
-        },
-        "editor.invisible": {
-          "description": "Text Color. Used to mark invisible characters in the editor.\n\nExample: spaces, tabs, carriage returns, etc.",
-          "default": null,
-          "type": ["string", "null"]
-        },
-        "editor.line_number": {
-          "description": "Text Color. Used for the text of the line number in the editor gutter.",
-          "default": null,
-          "type": ["string", "null"]
-        },
-        "editor.subheader.background": {
-          "default": null,
-          "type": ["string", "null"]
-        },
-        "editor.wrap_guide": {
-          "default": null,
-          "type": ["string", "null"]
-        },
-        "element.active": {
-          "description": "Background Color. Used for the active state of an element that should have a different background than the surface it's on.\n\nActive states are triggered by the mouse button being pressed down on an element, or the Return button or other activator being pressd.",
-          "default": null,
-          "type": ["string", "null"]
-        },
-        "element.background": {
-          "description": "Background Color. Used for the background of an element that should have a different background than the surface it's on.\n\nElements might include: Buttons, Inputs, Checkboxes, Radio Buttons...\n\nFor an element that should have the same background as the surface it's on, use `ghost_element_background`.",
-          "default": null,
-          "type": ["string", "null"]
-        },
-        "element.disabled": {
-          "description": "Background Color. Used for the disabled state of an element that should have a different background than the surface it's on.\n\nDisabled states are shown when a user cannot interact with an element, like a disabled button or input.",
-          "default": null,
-          "type": ["string", "null"]
-        },
-        "element.hover": {
-          "description": "Background Color. Used for the hover state of an element that should have a different background than the surface it's on.\n\nHover states are triggered by the mouse entering an element, or a finger touching an element on a touch screen.",
-          "default": null,
-          "type": ["string", "null"]
-        },
-        "element.selected": {
-          "description": "Background Color. Used for the selected state of an element that should have a different background than the surface it's on.\n\nSelected states are triggered by the element being selected (or \"activated\") by the user.\n\nThis could include a selected checkbox, a toggleable button that is toggled on, etc.",
-          "default": null,
-          "type": ["string", "null"]
-        },
-        "elevated_surface.background": {
-          "description": "Background color. Used for elevated surfaces, like a context menu, popup, or dialog.",
-          "default": null,
-          "type": ["string", "null"]
-        },
-        "error": {
-          "description": "Indicates a system error, a failed operation or a diagnostic error.",
-          "default": null,
-          "type": ["string", "null"]
-        },
-        "error.background": {
-          "default": null,
-          "type": ["string", "null"]
-        },
-        "error.border": {
-          "default": null,
-          "type": ["string", "null"]
-        },
-        "ghost_element.active": {
-          "description": "Background Color. Used for the active state of a ghost element that should have the same background as the surface it's on.\n\nActive states are triggered by the mouse button being pressed down on an element, or the Return button or other activator being pressd.",
-          "default": null,
-          "type": ["string", "null"]
-        },
-        "ghost_element.background": {
-          "description": "Used for the background of a ghost element that should have the same background as the surface it's on.\n\nElements might include: Buttons, Inputs, Checkboxes, Radio Buttons...\n\nFor an element that should have a different background than the surface it's on, use `element_background`.",
-          "default": null,
-          "type": ["string", "null"]
-        },
-        "ghost_element.disabled": {
-          "description": "Background Color. Used for the disabled state of a ghost element that should have the same background as the surface it's on.\n\nDisabled states are shown when a user cannot interact with an element, like a disabled button or input.",
-          "default": null,
-          "type": ["string", "null"]
-        },
-        "ghost_element.hover": {
-          "description": "Background Color. Used for the hover state of a ghost element that should have the same background as the surface it's on.\n\nHover states are triggered by the mouse entering an element, or a finger touching an element on a touch screen.",
-          "default": null,
-          "type": ["string", "null"]
-        },
-        "ghost_element.selected": {
-          "description": "Background Color. Used for the selected state of a ghost element that should have the same background as the surface it's on.\n\nSelected states are triggered by the element being selected (or \"activated\") by the user.\n\nThis could include a selected checkbox, a toggleable button that is toggled on, etc.",
-          "default": null,
-          "type": ["string", "null"]
-        },
-        "hidden": {
-          "description": "Represents a hidden status, such as a file being hidden in a file tree.",
-          "default": null,
-          "type": ["string", "null"]
-        },
-        "hidden.background": {
-          "default": null,
-          "type": ["string", "null"]
-        },
-        "hidden.border": {
-          "default": null,
-          "type": ["string", "null"]
-        },
-        "hint": {
-          "description": "Indicates a hint or some kind of additional information.",
-          "default": null,
-          "type": ["string", "null"]
-        },
-        "hint.background": {
-          "default": null,
-          "type": ["string", "null"]
-        },
-        "hint.border": {
-          "default": null,
-          "type": ["string", "null"]
-        },
-        "icon": {
-          "description": "Fill Color. Used for the default fill color of an icon.",
-          "default": null,
-          "type": ["string", "null"]
-        },
-        "icon.accent": {
-          "description": "Fill Color. Used for the accent fill color of an icon.\n\nThis might be used to show when a toggleable icon button is selected.",
-          "default": null,
-          "type": ["string", "null"]
-        },
-        "icon.disabled": {
-          "description": "Fill Color. Used for the disabled fill color of an icon.\n\nDisabled states are shown when a user cannot interact with an element, like a icon button.",
-          "default": null,
-          "type": ["string", "null"]
-        },
-        "icon.muted": {
-          "description": "Fill Color. Used for the muted or deemphasized fill color of an icon.\n\nThis might be used to show an icon in an inactive pane, or to demphasize a series of icons to give them less visual weight.",
-          "default": null,
-          "type": ["string", "null"]
-        },
-        "icon.placeholder": {
-          "description": "Fill Color. Used for the placeholder fill color of an icon.\n\nThis might be used to show an icon in an input that disappears when the user enters text.",
-          "default": null,
-          "type": ["string", "null"]
-        },
-        "ignored": {
-          "description": "Indicates that something is deliberately ignored, such as a file or operation ignored by Git.",
-          "default": null,
-          "type": ["string", "null"]
-        },
-        "ignored.background": {
-          "default": null,
-          "type": ["string", "null"]
-        },
-        "ignored.border": {
-          "default": null,
-          "type": ["string", "null"]
-        },
-        "info": {
-          "description": "Represents informational status updates or messages.",
-          "default": null,
-          "type": ["string", "null"]
-        },
-        "info.background": {
-          "default": null,
-          "type": ["string", "null"]
-        },
-        "info.border": {
-          "default": null,
-          "type": ["string", "null"]
-        },
-        "link_text.hover": {
-          "default": null,
-          "type": ["string", "null"]
-        },
-        "modified": {
-          "description": "Indicates a changed or altered status, like a file that has been edited.",
-          "default": null,
-          "type": ["string", "null"]
-        },
-        "modified.background": {
-          "default": null,
-          "type": ["string", "null"]
-        },
-        "modified.border": {
-          "default": null,
-          "type": ["string", "null"]
-        },
-        "pane.focused_border": {
-          "default": null,
-          "type": ["string", "null"]
-        },
-        "pane_group.border": {
-          "default": null,
-          "type": ["string", "null"]
-        },
-        "panel.background": {
-          "default": null,
-          "type": ["string", "null"]
-        },
-        "panel.focused_border": {
-          "default": null,
-          "type": ["string", "null"]
-        },
-        "panel.indent_guide": {
-          "default": null,
-          "type": ["string", "null"]
-        },
-        "panel.indent_guide_active": {
-          "default": null,
-          "type": ["string", "null"]
-        },
-        "panel.indent_guide_hover": {
-          "default": null,
-          "type": ["string", "null"]
-        },
-        "players": {
-          "default": [],
-          "type": "array",
-          "items": {
-            "$ref": "#/definitions/PlayerColorContent"
-          }
-        },
-        "predictive": {
-          "description": "Indicates something that is predicted, like automatic code completion, or generated code.",
-          "default": null,
-          "type": ["string", "null"]
-        },
-        "predictive.background": {
-          "default": null,
-          "type": ["string", "null"]
-        },
-        "predictive.border": {
-          "default": null,
-          "type": ["string", "null"]
-        },
-        "renamed": {
-          "description": "Represents a renamed status, such as a file that has been renamed.",
-          "default": null,
-          "type": ["string", "null"]
-        },
-        "renamed.background": {
-          "default": null,
-          "type": ["string", "null"]
-        },
-        "renamed.border": {
-          "default": null,
-          "type": ["string", "null"]
-        },
-        "scrollbar.thumb.background": {
-          "description": "The color of the scrollbar thumb.",
-          "default": null,
-          "type": ["string", "null"]
-        },
-        "scrollbar.thumb.border": {
-          "description": "The border color of the scrollbar thumb.",
-          "default": null,
-          "type": ["string", "null"]
-        },
-        "scrollbar.thumb.hover_background": {
-          "description": "The color of the scrollbar thumb when hovered over.",
-          "default": null,
-          "type": ["string", "null"]
-        },
-        "scrollbar.track.background": {
-          "description": "The background color of the scrollbar track.",
-          "default": null,
-          "type": ["string", "null"]
-        },
-        "scrollbar.track.border": {
-          "description": "The border color of the scrollbar track.",
-          "default": null,
-          "type": ["string", "null"]
-        },
-        "search.match_background": {
-          "default": null,
-          "type": ["string", "null"]
-        },
-        "status_bar.background": {
-          "default": null,
-          "type": ["string", "null"]
-        },
-        "success": {
-          "description": "Indicates a successful operation or task completion.",
-          "default": null,
-          "type": ["string", "null"]
-        },
-        "success.background": {
-          "default": null,
-          "type": ["string", "null"]
-        },
-        "success.border": {
-          "default": null,
-          "type": ["string", "null"]
-        },
-        "surface.background": {
-          "description": "Background Color. Used for grounded surfaces like a panel or tab.",
-          "default": null,
-          "type": ["string", "null"]
-        },
+        ],
+        "version_control.added": "#a6e3a1",
+        "version_control.added_background": "#a6e3a126",
+        "version_control.deleted": "#f38ba8",
+        "version_control.deleted_background": "#f38ba826",
+        "version_control.modified": "#f9e2af",
+        "version_control.modified_background": "#f9e2af26",
+        "version_control.renamed": "#74c7ec",
+        "version_control.conflict": "#fab387",
+        "version_control.conflict_background": "#fab38726",
+        "version_control.ignored": "#6c7086",
         "syntax": {
-          "description": "The styles for syntax nodes.",
-          "default": {},
-          "type": "object",
-          "additionalProperties": {
-            "$ref": "#/definitions/HighlightStyleContent"
+          "variable": {
+            "color": "#cdd6f4",
+            "font_style": null,
+            "font_weight": null
+          },
+          "variable.builtin": {
+            "color": "#f38ba8",
+            "font_style": null,
+            "font_weight": null
+          },
+          "variable.parameter": {
+            "color": "#eba0ac",
+            "font_style": null,
+            "font_weight": null
+          },
+          "variable.member": {
+            "color": "#89b4fa",
+            "font_style": null,
+            "font_weight": null
+          },
+          "variable.special": {
+            "color": "#f38ba8",
+            "font_style": "italic",
+            "font_weight": null
+          },
+          "constant": {
+            "color": "#fab387",
+            "font_style": null,
+            "font_weight": null
+          },
+          "constant.builtin": {
+            "color": "#fab387",
+            "font_style": null,
+            "font_weight": null
+          },
+          "constant.macro": {
+            "color": "#cba6f7",
+            "font_style": null,
+            "font_weight": null
+          },
+          "module": {
+            "color": "#f9e2af",
+            "font_style": "italic",
+            "font_weight": null
+          },
+          "label": {
+            "color": "#74c7ec",
+            "font_style": null,
+            "font_weight": null
+          },
+          "string": {
+            "color": "#a6e3a1",
+            "font_style": null,
+            "font_weight": null
+          },
+          "string.documentation": {
+            "color": "#94e2d5",
+            "font_style": null,
+            "font_weight": null
+          },
+          "string.regexp": {
+            "color": "#fab387",
+            "font_style": null,
+            "font_weight": null
+          },
+          "string.escape": {
+            "color": "#f5c2e7",
+            "font_style": null,
+            "font_weight": null
+          },
+          "string.special": {
+            "color": "#f5c2e7",
+            "font_style": null,
+            "font_weight": null
+          },
+          "string.special.path": {
+            "color": "#f5c2e7",
+            "font_style": null,
+            "font_weight": null
+          },
+          "string.special.symbol": {
+            "color": "#f2cdcd",
+            "font_style": null,
+            "font_weight": null
+          },
+          "string.special.url": {
+            "color": "#f5e0dc",
+            "font_style": "italic",
+            "font_weight": null
+          },
+          "character": {
+            "color": "#94e2d5",
+            "font_style": null,
+            "font_weight": null
+          },
+          "character.special": {
+            "color": "#f5c2e7",
+            "font_style": null,
+            "font_weight": null
+          },
+          "boolean": {
+            "color": "#fab387",
+            "font_style": null,
+            "font_weight": null
+          },
+          "number": {
+            "color": "#fab387",
+            "font_style": null,
+            "font_weight": null
+          },
+          "number.float": {
+            "color": "#fab387",
+            "font_style": null,
+            "font_weight": null
+          },
+          "type": {
+            "color": "#f9e2af",
+            "font_style": null,
+            "font_weight": null
+          },
+          "type.builtin": {
+            "color": "#cba6f7",
+            "font_style": "italic",
+            "font_weight": null
+          },
+          "type.definition": {
+            "color": "#f9e2af",
+            "font_style": null,
+            "font_weight": null
+          },
+          "type.interface": {
+            "color": "#f9e2af",
+            "font_style": "italic",
+            "font_weight": null
+          },
+          "type.super": {
+            "color": "#f9e2af",
+            "font_style": "italic",
+            "font_weight": null
+          },
+          "attribute": {
+            "color": "#fab387",
+            "font_style": null,
+            "font_weight": null
+          },
+          "property": {
+            "color": "#89b4fa",
+            "font_style": null,
+            "font_weight": null
+          },
+          "function": {
+            "color": "#89b4fa",
+            "font_style": null,
+            "font_weight": null
+          },
+          "function.builtin": {
+            "color": "#fab387",
+            "font_style": null,
+            "font_weight": null
+          },
+          "function.call": {
+            "color": "#89b4fa",
+            "font_style": null,
+            "font_weight": null
+          },
+          "function.macro": {
+            "color": "#94e2d5",
+            "font_style": null,
+            "font_weight": null
+          },
+          "function.method": {
+            "color": "#89b4fa",
+            "font_style": null,
+            "font_weight": null
+          },
+          "function.method.call": {
+            "color": "#89b4fa",
+            "font_style": null,
+            "font_weight": null
+          },
+          "constructor": {
+            "color": "#f2cdcd",
+            "font_style": null,
+            "font_weight": null
+          },
+          "operator": {
+            "color": "#89dceb",
+            "font_style": null,
+            "font_weight": null
+          },
+          "keyword": {
+            "color": "#cba6f7",
+            "font_style": null,
+            "font_weight": null
+          },
+          "keyword.modifier": {
+            "color": "#cba6f7",
+            "font_style": null,
+            "font_weight": null
+          },
+          "keyword.type": {
+            "color": "#cba6f7",
+            "font_style": null,
+            "font_weight": null
+          },
+          "keyword.coroutine": {
+            "color": "#cba6f7",
+            "font_style": null,
+            "font_weight": null
+          },
+          "keyword.function": {
+            "color": "#cba6f7",
+            "font_style": null,
+            "font_weight": null
+          },
+          "keyword.operator": {
+            "color": "#cba6f7",
+            "font_style": null,
+            "font_weight": null
+          },
+          "keyword.import": {
+            "color": "#cba6f7",
+            "font_style": null,
+            "font_weight": null
+          },
+          "keyword.repeat": {
+            "color": "#cba6f7",
+            "font_style": null,
+            "font_weight": null
+          },
+          "keyword.return": {
+            "color": "#cba6f7",
+            "font_style": null,
+            "font_weight": null
+          },
+          "keyword.debug": {
+            "color": "#cba6f7",
+            "font_style": null,
+            "font_weight": null
+          },
+          "keyword.exception": {
+            "color": "#cba6f7",
+            "font_style": null,
+            "font_weight": null
+          },
+          "keyword.conditional": {
+            "color": "#cba6f7",
+            "font_style": null,
+            "font_weight": null
+          },
+          "keyword.conditional.ternary": {
+            "color": "#cba6f7",
+            "font_style": null,
+            "font_weight": null
+          },
+          "keyword.directive": {
+            "color": "#f5c2e7",
+            "font_style": null,
+            "font_weight": null
+          },
+          "keyword.directive.define": {
+            "color": "#f5c2e7",
+            "font_style": null,
+            "font_weight": null
+          },
+          "keyword.export": {
+            "color": "#89dceb",
+            "font_style": null,
+            "font_weight": null
+          },
+          "punctuation": {
+            "color": "#9399b2",
+            "font_style": null,
+            "font_weight": null
+          },
+          "punctuation.delimiter": {
+            "color": "#9399b2",
+            "font_style": null,
+            "font_weight": null
+          },
+          "punctuation.bracket": {
+            "color": "#9399b2",
+            "font_style": null,
+            "font_weight": null
+          },
+          "punctuation.special": {
+            "color": "#f5c2e7",
+            "font_style": null,
+            "font_weight": null
+          },
+          "punctuation.special.symbol": {
+            "color": "#f2cdcd",
+            "font_style": null,
+            "font_weight": null
+          },
+          "punctuation.list_marker": {
+            "color": "#94e2d5",
+            "font_style": null,
+            "font_weight": null
+          },
+          "comment": {
+            "color": "#9399b2",
+            "font_style": "italic",
+            "font_weight": null
+          },
+          "comment.doc": {
+            "color": "#9399b2",
+            "font_style": "italic",
+            "font_weight": null
+          },
+          "comment.documentation": {
+            "color": "#9399b2",
+            "font_style": "italic",
+            "font_weight": null
+          },
+          "comment.error": {
+            "color": "#f38ba8",
+            "font_style": "italic",
+            "font_weight": null
+          },
+          "comment.warning": {
+            "color": "#f9e2af",
+            "font_style": "italic",
+            "font_weight": null
+          },
+          "comment.hint": {
+            "color": "#89b4fa",
+            "font_style": "italic",
+            "font_weight": null
+          },
+          "comment.todo": {
+            "color": "#f2cdcd",
+            "font_style": "italic",
+            "font_weight": null
+          },
+          "comment.note": {
+            "color": "#f5e0dc",
+            "font_style": "italic",
+            "font_weight": null
+          },
+          "diff.plus": {
+            "color": "#a6e3a1",
+            "font_style": null,
+            "font_weight": null
+          },
+          "diff.minus": {
+            "color": "#f38ba8",
+            "font_style": null,
+            "font_weight": null
+          },
+          "tag": {
+            "color": "#89b4fa",
+            "font_style": null,
+            "font_weight": null
+          },
+          "tag.attribute": {
+            "color": "#f9e2af",
+            "font_style": "italic",
+            "font_weight": null
+          },
+          "tag.delimiter": {
+            "color": "#94e2d5",
+            "font_style": null,
+            "font_weight": null
+          },
+          "parameter": {
+            "color": "#eba0ac",
+            "font_style": null,
+            "font_weight": null
+          },
+          "field": {
+            "color": "#b4befe",
+            "font_style": null,
+            "font_weight": null
+          },
+          "namespace": {
+            "color": "#f9e2af",
+            "font_style": "italic",
+            "font_weight": null
+          },
+          "float": {
+            "color": "#fab387",
+            "font_style": null,
+            "font_weight": null
+          },
+          "symbol": {
+            "color": "#f5c2e7",
+            "font_style": null,
+            "font_weight": null
+          },
+          "string.regex": {
+            "color": "#fab387",
+            "font_style": null,
+            "font_weight": null
+          },
+          "text": {
+            "color": "#cdd6f4",
+            "font_style": null,
+            "font_weight": null
+          },
+          "emphasis.strong": {
+            "color": "#eba0ac",
+            "font_style": null,
+            "font_weight": 700
+          },
+          "emphasis": {
+            "color": "#eba0ac",
+            "font_style": "italic",
+            "font_weight": null
+          },
+          "embedded": {
+            "color": "#eba0ac",
+            "font_style": null,
+            "font_weight": null
+          },
+          "text.literal": {
+            "color": "#a6e3a1",
+            "font_style": null,
+            "font_weight": null
+          },
+          "concept": {
+            "color": "#74c7ec",
+            "font_style": null,
+            "font_weight": null
+          },
+          "enum": {
+            "color": "#94e2d5",
+            "font_style": null,
+            "font_weight": 700
+          },
+          "function.decorator": {
+            "color": "#fab387",
+            "font_style": null,
+            "font_weight": null
+          },
+          "type.class.definition": {
+            "color": "#f9e2af",
+            "font_style": null,
+            "font_weight": 700
+          },
+          "hint": {
+            "color": "#585b70",
+            "font_style": "italic",
+            "font_weight": null
+          },
+          "link_text": {
+            "color": "#b4befe",
+            "font_style": null,
+            "font_weight": null
+          },
+          "link_uri": {
+            "color": "#89b4fa",
+            "font_style": "italic",
+            "font_weight": null
+          },
+          "parent": {
+            "color": "#fab387",
+            "font_style": null,
+            "font_weight": null
+          },
+          "predictive": {
+            "color": "#6c7086",
+            "font_style": null,
+            "font_weight": null
+          },
+          "predoc": {
+            "color": "#f38ba8",
+            "font_style": null,
+            "font_weight": null
+          },
+          "primary": {
+            "color": "#eba0ac",
+            "font_style": null,
+            "font_weight": null
+          },
+          "tag.doctype": {
+            "color": "#cba6f7",
+            "font_style": null,
+            "font_weight": null
+          },
+          "string.doc": {
+            "color": "#94e2d5",
+            "font_style": "italic",
+            "font_weight": null
+          },
+          "title": {
+            "color": "#cdd6f4",
+            "font_style": null,
+            "font_weight": 800
+          },
+          "variant": {
+            "color": "#f38ba8",
+            "font_style": null,
+            "font_weight": null
           }
-        },
-        "tab.active_background": {
-          "default": null,
-          "type": ["string", "null"]
-        },
-        "tab.inactive_background": {
-          "default": null,
-          "type": ["string", "null"]
-        },
-        "tab_bar.background": {
-          "default": null,
-          "type": ["string", "null"]
-        },
-        "terminal.ansi.background": {
-          "description": "Terminal ANSI background color.",
-          "default": null,
-          "type": ["string", "null"]
-        },
-        "terminal.ansi.black": {
-          "description": "Black ANSI terminal color.",
-          "default": null,
-          "type": ["string", "null"]
-        },
-        "terminal.ansi.blue": {
-          "description": "Blue ANSI terminal color.",
-          "default": null,
-          "type": ["string", "null"]
-        },
-        "terminal.ansi.bright_black": {
-          "description": "Bright black ANSI terminal color.",
-          "default": null,
-          "type": ["string", "null"]
-        },
-        "terminal.ansi.bright_blue": {
-          "description": "Bright blue ANSI terminal color.",
-          "default": null,
-          "type": ["string", "null"]
-        },
-        "terminal.ansi.bright_cyan": {
-          "description": "Bright cyan ANSI terminal color.",
-          "default": null,
-          "type": ["string", "null"]
-        },
-        "terminal.ansi.bright_green": {
-          "description": "Bright green ANSI terminal color.",
-          "default": null,
-          "type": ["string", "null"]
-        },
-        "terminal.ansi.bright_magenta": {
-          "description": "Bright magenta ANSI terminal color.",
-          "default": null,
-          "type": ["string", "null"]
-        },
-        "terminal.ansi.bright_red": {
-          "description": "Bright red ANSI terminal color.",
-          "default": null,
-          "type": ["string", "null"]
-        },
-        "terminal.ansi.bright_white": {
-          "description": "Bright white ANSI terminal color.",
-          "default": null,
-          "type": ["string", "null"]
-        },
-        "terminal.ansi.bright_yellow": {
-          "description": "Bright yellow ANSI terminal color.",
-          "default": null,
-          "type": ["string", "null"]
-        },
-        "terminal.ansi.cyan": {
-          "description": "Cyan ANSI terminal color.",
-          "default": null,
-          "type": ["string", "null"]
-        },
-        "terminal.ansi.dim_black": {
-          "description": "Dim black ANSI terminal color.",
-          "default": null,
-          "type": ["string", "null"]
-        },
-        "terminal.ansi.dim_blue": {
-          "description": "Dim blue ANSI terminal color.",
-          "default": null,
-          "type": ["string", "null"]
-        },
-        "terminal.ansi.dim_cyan": {
-          "description": "Dim cyan ANSI terminal color.",
-          "default": null,
-          "type": ["string", "null"]
-        },
-        "terminal.ansi.dim_green": {
-          "description": "Dim green ANSI terminal color.",
-          "default": null,
-          "type": ["string", "null"]
-        },
-        "terminal.ansi.dim_magenta": {
-          "description": "Dim magenta ANSI terminal color.",
-          "default": null,
-          "type": ["string", "null"]
-        },
-        "terminal.ansi.dim_red": {
-          "description": "Dim red ANSI terminal color.",
-          "default": null,
-          "type": ["string", "null"]
-        },
-        "terminal.ansi.dim_white": {
-          "description": "Dim white ANSI terminal color.",
-          "default": null,
-          "type": ["string", "null"]
-        },
-        "terminal.ansi.dim_yellow": {
-          "description": "Dim yellow ANSI terminal color.",
-          "default": null,
-          "type": ["string", "null"]
-        },
-        "terminal.ansi.green": {
-          "description": "Green ANSI terminal color.",
-          "default": null,
-          "type": ["string", "null"]
-        },
-        "terminal.ansi.magenta": {
-          "description": "Magenta ANSI terminal color.",
-          "default": null,
-          "type": ["string", "null"]
-        },
-        "terminal.ansi.red": {
-          "description": "Red ANSI terminal color.",
-          "default": null,
-          "type": ["string", "null"]
-        },
-        "terminal.ansi.white": {
-          "description": "White ANSI terminal color.",
-          "default": null,
-          "type": ["string", "null"]
-        },
-        "terminal.ansi.yellow": {
-          "description": "Yellow ANSI terminal color.",
-          "default": null,
-          "type": ["string", "null"]
-        },
-        "terminal.background": {
-          "description": "Terminal background color.",
-          "default": null,
-          "type": ["string", "null"]
-        },
-        "terminal.bright_foreground": {
-          "description": "Bright terminal foreground color.",
-          "default": null,
-          "type": ["string", "null"]
-        },
-        "terminal.dim_foreground": {
-          "description": "Dim terminal foreground color.",
-          "default": null,
-          "type": ["string", "null"]
-        },
-        "terminal.foreground": {
-          "description": "Terminal foreground color.",
-          "default": null,
-          "type": ["string", "null"]
-        },
-        "text": {
-          "description": "Text Color. Default text color used for most text.",
-          "default": null,
-          "type": ["string", "null"]
-        },
-        "text.accent": {
-          "description": "Text Color. Color used for emphasis or highlighting certain text, like an active filter or a matched character in a search.",
-          "default": null,
-          "type": ["string", "null"]
-        },
-        "text.disabled": {
-          "description": "Text Color. Color used for text denoting disabled elements. Typically, the color is faded or grayed out to emphasize the disabled state.",
-          "default": null,
-          "type": ["string", "null"]
-        },
-        "text.muted": {
-          "description": "Text Color. Color of muted or deemphasized text. It is a subdued version of the standard text color.",
-          "default": null,
-          "type": ["string", "null"]
-        },
-        "text.placeholder": {
-          "description": "Text Color. Color of the placeholder text typically shown in input fields to guide the user to enter valid data.",
-          "default": null,
-          "type": ["string", "null"]
-        },
-        "title_bar.background": {
-          "default": null,
-          "type": ["string", "null"]
-        },
-        "title_bar.inactive_background": {
-          "default": null,
-          "type": ["string", "null"]
-        },
-        "toolbar.background": {
-          "default": null,
-          "type": ["string", "null"]
-        },
-        "unreachable": {
-          "description": "Indicates some kind of unreachable status, like a block of code that can never be reached.",
-          "default": null,
-          "type": ["string", "null"]
-        },
-        "unreachable.background": {
-          "default": null,
-          "type": ["string", "null"]
-        },
-        "unreachable.border": {
-          "default": null,
-          "type": ["string", "null"]
-        },
-        "warning": {
-          "description": "Represents a warning status, like an operation that is about to fail.",
-          "default": null,
-          "type": ["string", "null"]
-        },
-        "warning.background": {
-          "default": null,
-          "type": ["string", "null"]
-        },
-        "warning.border": {
-          "default": null,
-          "type": ["string", "null"]
         }
       }
-    },
-    "WindowBackgroundContent": {
-      "description": "The background appearance of the window.",
-      "type": "string",
-      "enum": ["opaque", "transparent", "blurred"]
     }
-  }
+  ]
 }
