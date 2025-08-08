@@ -3,5 +3,5 @@ name = "Matte Black"
 version = "0.0.1"
 schema_version = 1
 authors = ["Taha YVR <taha@noiserandom.com>"]
-description = "A dark theme with a tang."
+description = "A low-distraction dark theme for Zed."
 repository = "https://github.com/tahayvr/matte-black-zed"
