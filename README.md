@@ -1,8 +1,18 @@
 ## Matte Black – Zed Theme
 
-A low-distraction dark theme for Zed.
+A low-distraction dark theme.
 
-Matte Black is a crisp, low-distraction dark theme for Zed. It’s built from a minimal black base with warm, analogous accents for focus.
+**[Matte Black theme for Zed](https://zed.dev/extensions/matte-black)**
+
+![screenshot](./assets/screenshot.png)
+
+### Matte Black for Other Platforms
+
+[matteblacktheme.com](https://matteblacktheme.com)
+
+[Matte Black on VSCode Marketplace](https://marketplace.visualstudio.com/items?itemName=TahaYVR.matteblack)
+
+[Matte Black on Open VSX](https://open-vsx.org/extension/TahaYVR/matteblack)
 
 ### License
 
